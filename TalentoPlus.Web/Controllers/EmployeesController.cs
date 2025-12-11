@@ -12,7 +12,6 @@ using TalentoPlus.Web.Services;
 namespace TalentoPlus.Web.Controllers;
 
 
-[Authorize(Roles = "Admin")] 
 public class EmployeesController : Controller
 {
     private readonly EmployeeService _employeeService;
