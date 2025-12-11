@@ -1,0 +1,11 @@
+C:\Users\Jero\Desktop\TalentoPlus\2-Domain\bin\Debug\net9.0\2-Domain.deps.json
+C:\Users\Jero\Desktop\TalentoPlus\2-Domain\bin\Debug\net9.0\2-Domain.dll
+C:\Users\Jero\Desktop\TalentoPlus\2-Domain\bin\Debug\net9.0\2-Domain.pdb
+C:\Users\Jero\Desktop\TalentoPlus\2-Domain\obj\Debug\net9.0\2-Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jero\Desktop\TalentoPlus\2-Domain\obj\Debug\net9.0\2-Domain.AssemblyInfoInputs.cache
+C:\Users\Jero\Desktop\TalentoPlus\2-Domain\obj\Debug\net9.0\2-Domain.AssemblyInfo.cs
+C:\Users\Jero\Desktop\TalentoPlus\2-Domain\obj\Debug\net9.0\2-Domain.csproj.CoreCompileInputs.cache
+C:\Users\Jero\Desktop\TalentoPlus\2-Domain\obj\Debug\net9.0\2-Domain.dll
+C:\Users\Jero\Desktop\TalentoPlus\2-Domain\obj\Debug\net9.0\refint\2-Domain.dll
+C:\Users\Jero\Desktop\TalentoPlus\2-Domain\obj\Debug\net9.0\2-Domain.pdb
+C:\Users\Jero\Desktop\TalentoPlus\2-Domain\obj\Debug\net9.0\ref\2-Domain.dll

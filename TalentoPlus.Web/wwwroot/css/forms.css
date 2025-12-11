@@ -1,0 +1,32 @@
+form div {
+    margin-bottom: 12px;
+}
+
+label {
+    font-weight: 600;
+}
+
+input, select, textarea {
+    width: 350px;
+    padding: 6px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+button, .ai-btn {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background: #4c49ea;
+    color: white;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover, .ai-btn:hover {
+    background: #3b39c6;
+}
+
+textarea {
+    height: 90px;
+}

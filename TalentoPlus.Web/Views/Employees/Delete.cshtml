@@ -1,0 +1,10 @@
+@model _2_Domain.Entities.Employee
+
+<h2>Delete Employee</h2>
+
+<p>Are you sure you want to delete @Model.FirstName @Model.LastName?</p>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit">Delete</button>
+</form>

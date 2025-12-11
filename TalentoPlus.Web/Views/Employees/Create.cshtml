@@ -1,0 +1,103 @@
+@model TalentoPlus.Web.Models.EmployeeFormViewModel
+
+<h2>Crear empleado</h2>
+
+<form asp-action="Create">
+
+    <div>
+        <label>Documento</label>
+        <input asp-for="Document" />
+        <span asp-validation-for="Document"></span>
+    </div>
+
+    <div>
+        <label>Nombre</label>
+        <input asp-for="FirstName" />
+    </div>
+
+    <div>
+        <label>Apellido</label>
+        <input asp-for="LastName" />
+    </div>
+
+    <div>
+        <label>Fecha nacimiento</label>
+        <input asp-for="BirthDate" type="date" />
+    </div>
+
+    <div>
+        <label>Dirección</label>
+        <input asp-for="Address" />
+    </div>
+
+    <div>
+        <label>Teléfono</label>
+        <input asp-for="Phone" />
+    </div>
+
+    <div>
+        <label>Email</label>
+        <input asp-for="Email" />
+    </div>
+
+    <div>
+        <label>Cargo</label>
+        <input asp-for="JobTitle" />
+    </div>
+
+    <div>
+        <label>Salario</label>
+        <input asp-for="Salary" />
+    </div>
+
+    <div>
+        <label>Fecha contratación</label>
+        <input asp-for="HireDate" type="date" />
+    </div>
+
+    <div>
+        <label>Estado</label>
+        <input asp-for="Status" />
+    </div>
+
+    <div>
+        <label>Nivel educativo</label>
+        <input asp-for="EducationLevel" />
+    </div>
+
+    <div>
+        <label>Departamento</label>
+        <select asp-for="DepartmentId" asp-items="ViewBag.Departments"></select>
+    </div>
+
+    <div>
+        <label>Perfil profesional</label>
+        <textarea asp-for="ProfessionalProfile"></textarea>
+        <button type="button" class="btn btn-secondary" id="btnIA">Generar con IA</button>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Guardar</button>
+</form>
+
+@section Scripts {
+<script>
+    document.getElementById("btnIA").addEventListener("click", () => {
+        document.getElementById("btnIA").innerText = "Generando...";
+
+        const job = document.getElementById("JobTitle").value;
+        const edu = document.getElementById("EducationLevel").value;
+        const dept = document.getElementById("DepartmentId").value;
+
+        fetch('/Employees/GenerateProfile', {
+            method: 'POST',
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: `jobTitle=${job}&educationLevel=${edu}&departmentId=${dept}`
+        })
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById("ProfessionalProfile").value = data.text;
+                document.getElementById("btnIA").innerText = "Generar con IA";
+            });
+    });
+</script>
+}

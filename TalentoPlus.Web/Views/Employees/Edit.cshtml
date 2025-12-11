@@ -1,0 +1,79 @@
+@model TalentoPlus.Web.Models.EmployeeFormViewModel
+
+<h2>Edit Employee</h2>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="Id" />
+
+    <div>
+        <label>Document</label>
+        <input asp-for="Document" />
+    </div>
+
+    <div>
+        <label>First name</label>
+        <input asp-for="FirstName" />
+    </div>
+
+    <div>
+        <label>Last name</label>
+        <input asp-for="LastName" />
+    </div>
+
+    <div>
+        <label>Birth date</label>
+        <input asp-for="BirthDate" type="date" />
+    </div>
+
+    <div>
+        <label>Address</label>
+        <input asp-for="Address" />
+    </div>
+
+    <div>
+        <label>Phone</label>
+        <input asp-for="Phone" />
+    </div>
+
+    <div>
+        <label>Email</label>
+        <input asp-for="Email" />
+    </div>
+
+    <div>
+        <label>Job title</label>
+        <input asp-for="JobTitle" />
+    </div>
+
+    <div>
+        <label>Salary</label>
+        <input asp-for="Salary" />
+    </div>
+
+    <div>
+        <label>Hire date</label>
+        <input asp-for="HireDate" type="date" />
+    </div>
+
+    <div>
+        <label>Status</label>
+        <input asp-for="Status" />
+    </div>
+
+    <div>
+        <label>Education level</label>
+        <input asp-for="EducationLevel" />
+    </div>
+
+    <div>
+        <label>Professional profile</label>
+        <textarea asp-for="ProfessionalProfile"></textarea>
+    </div>
+
+    <div>
+        <label>Department</label>
+        <select asp-for="DepartmentId" asp-items="Model.Departments"></select>
+    </div>
+
+    <button type="submit">Update</button>
+</form>

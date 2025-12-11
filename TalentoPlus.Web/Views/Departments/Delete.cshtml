@@ -1,0 +1,11 @@
+@model _2_Domain.Entities.Department
+
+<h2>Eliminar departamento</h2>
+
+<p>¿Seguro que deseas eliminar el departamento <strong>@Model.Name</strong>?</p>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <button type="button" class="btn btn-secondary" onclick="location.href='@Url.Action("Index")'">Cancelar</button>
+</form>

@@ -1,0 +1,23 @@
+@model TalentoPlus.Web.Models.LoginViewModel
+
+<div class="auth-container">
+    <h2>Login</h2>
+
+    <form asp-action="Login" method="post">
+        <div>
+            <label>Email</label>
+            <input asp-for="Email" />
+        </div>
+        <div>
+            <label>Password</label>
+            <input asp-for="Password" type="password" />
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:100%;">Entrar</button>
+
+        <p class="small">
+            ¿No tienes cuenta?
+            <a asp-action="Register">Regístrate aquí</a>
+        </p>
+    </form>
+</div>

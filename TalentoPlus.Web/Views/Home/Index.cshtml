@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="hero">
+    <div class="hero-content">
+        <h1 class="hero-title">Gestiona tu talento con <span>TalentoPlus</span></h1>
+        <p class="hero-text">
+            Administra empleados, departamentos, reportes PDF, importación desde Excel y análisis con IA,
+            todo en un solo lugar y con una interfaz clara.
+        </p>
+
+        <div class="hero-actions">
+            <button class="btn btn-primary" onclick="location.href='@Url.Action("Index","Dashboard")'">
+                Ver dashboard
+            </button>
+            <button class="btn btn-secondary" onclick="location.href='@Url.Action("Index","Employees")'">
+                Empleados
+            </button>
+            <button class="btn btn-secondary" onclick="location.href='@Url.Action("Index","Departments")'">
+                Departamentos
+            </button>
+        </div>
+
+        <p class="text-muted" style="margin-top:15px;">
+            Inicia sesión para acceder a todas las funcionalidades.
+        </p>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+@model IEnumerable<_2_Domain.Entities.Department>
+
+<h2>Departamentos</h2>
+
+<button class="btn btn-primary" onclick="location.href='@Url.Action("Create")'">
+    + Crear departamento
+</button>
+
+<div class="table-container">
+    <table>
+        <thead>
+        <tr>
+            <th>Nombre</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var d in Model)
+        {
+            <tr>
+                <td>@d.Name</td>
+                <td>
+                    <button class="btn btn-primary" onclick="location.href='@Url.Action("Edit", new { id = d.Id })'">Editar</button>
+                    <button class="btn btn-danger" onclick="location.href='@Url.Action("Delete", new { id = d.Id })'">Eliminar</button>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

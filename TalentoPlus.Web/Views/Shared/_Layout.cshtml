@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TalentoPlus.Web</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/TalentoPlus.Web.styles.css" asp-append-version="true" />
+</head>
+<body>
+<header style="background:white; padding:15px; box-shadow:0 2px 5px rgba(0,0,0,0.1); margin-bottom:20px;">
+    <div style="max-width:1200px; margin:auto; display:flex; justify-content:space-between; align-items:center;">
+        <h2 style="color:#4c49ea;">TalentoPlus</h2>
+
+        <nav style="display:flex; gap:20px; align-items:center;">
+
+            <a asp-controller="Home" asp-action="Index">Inicio</a>
+            <a asp-controller="Dashboard" asp-action="Index">Dashboard</a>
+            <a asp-controller="Employees" asp-action="Index">Empleados</a>
+            <a asp-controller="Departments" asp-action="Index">Departamentos</a>
+
+            @if (User.Identity.IsAuthenticated)
+            {
+                <button class="btn btn-secondary" onclick="location.href='@Url.Action("Logout","Account")'">Salir</button>
+            }
+            else
+            {
+                <button class="btn btn-primary" onclick="location.href='@Url.Action("Login","Account")'">Login</button>
+            }
+        </nav>
+    </div>
+</header>
+
+
+    <div class="container">
+        <main role="main" class="container mt-4">
+            @RenderBody()
+        </main>
+        
+        @if (TempData["Success"] != null)
+        {
+            <div class="alert alert-success">@TempData["Success"]</div>
+        }
+        @if (TempData["Error"] != null)
+        {
+            <div class="alert alert-danger">@TempData["Error"]</div>
+        }
+
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        <a asp-controller="Dashboard" asp-action="Index">Dashboard</a>
+        <a asp-controller="Employees" asp-action="Index">Empleados</a>
+        <a asp-controller="Departments" asp-action="Index">Departamentos</a>
+        <a asp-controller="Account" asp-action="Logout">Salir</a>
+    }
+    else
+    {
+        <a asp-controller="Account" asp-action="Login">Login</a>
+    }
+
+
+</body>
+</html>

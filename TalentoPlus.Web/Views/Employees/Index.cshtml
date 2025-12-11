@@ -1,0 +1,38 @@
+@model IEnumerable<_2_Domain.Entities.Employee>
+
+<h2>Empleados</h2>
+
+<button class="btn btn-primary" onclick="location.href='@Url.Action("Create")'">+ Crear empleado</button>
+<button class="btn btn-secondary" onclick="location.href='@Url.Action("Import")'">Importar Excel</button>
+<button class="btn btn-secondary" onclick="location.href='@Url.Action("ExportPdf")'">Exportar PDF</button>
+
+<div class="table-container">
+    <table>
+        <thead>
+        <tr>
+            <th>Documento</th>
+            <th>Nombre</th>
+            <th>Departamento</th>
+            <th>Cargo</th>
+            <th>Salario</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var e in Model)
+        {
+            <tr>
+                <td>@e.Document</td>
+                <td>@e.FirstName @e.LastName</td>
+                <td>@e.Department?.Name</td>
+                <td>@e.JobTitle</td>
+                <td>@e.Salary</td>
+                <td>
+                    <button class="btn btn-primary" onclick="location.href='@Url.Action("Edit", new {id = e.Id})'">Editar</button>
+                    <button class="btn btn-danger" onclick="location.href='@Url.Action("Delete", new {id = e.Id})'">Eliminar</button>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

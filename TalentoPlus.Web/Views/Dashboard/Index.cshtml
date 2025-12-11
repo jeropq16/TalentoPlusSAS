@@ -1,0 +1,61 @@
+@model TalentoPlus.Web.Models.DashboardViewModel
+
+<h2>Dashboard</h2>
+
+<div class="dashboard-container">
+
+    <div class="card-grid">
+        <div class="kpi-card">
+            <div class="kpi-title">Empleados</div>
+            <div class="kpi-value">@Model.TotalEmployees</div>
+            <div class="kpi-sub">Total registrados</div>
+        </div>
+
+        <div class="kpi-card">
+            <div class="kpi-title">Departamentos</div>
+            <div class="kpi-value">@Model.TotalDepartments</div>
+            <div class="kpi-sub">Áreas creadas</div>
+        </div>
+
+        <div class="kpi-card">
+            <div class="kpi-title">Empleados activos</div>
+            <div class="kpi-value">@Model.ActiveEmployees</div>
+            <div class="kpi-sub">Estado actual</div>
+        </div>
+
+        <div class="kpi-card">
+            <div class="kpi-title">Salario promedio</div>
+            <div class="kpi-value">@Model.AverageSalary.ToString("N2")</div>
+            <div class="kpi-sub">Promedio general</div>
+        </div>
+    </div>
+
+    <h4 style="margin-top:30px;">Últimos empleados registrados</h4>
+
+    <div class="table-container">
+        <table>
+            <thead>
+            <tr>
+                <th>Documento</th>
+                <th>Nombre</th>
+                <th>Departamento</th>
+                <th>Cargo</th>
+                <th>Salario</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var e in Model.LastEmployees)
+            {
+                <tr>
+                    <td>@e.Document</td>
+                    <td>@e.FirstName @e.LastName</td>
+                    <td>@e.Department?.Name</td>
+                    <td>@e.JobTitle</td>
+                    <td>@e.Salary.ToString("N2")</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+
+</div>
